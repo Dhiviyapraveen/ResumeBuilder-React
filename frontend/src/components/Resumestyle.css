@@ -1,0 +1,183 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #6a1b9a;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Wrapper to keep centered with padding */
+.form-wrapper {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Main container with left (form) and right (preview) */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1500px;
+  width: 100%;
+}
+
+/* Left-side form */
+form {
+  flex: 1;
+  min-width: 300px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  color: #333;
+}
+
+/* Textarea tweaks */
+textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.actions button {
+  width: 48%;
+  padding: 12px;
+  background-color: #6a1b9a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.actions button:hover {
+  background-color: #4a148c;
+}
+
+/* Right-side Preview */
+.preview {
+  flex: 1;
+  min-width: 300px;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+/* PDF Style Block */
+.pdf-container {
+  font-family: "Arial", sans-serif;
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+.pdf-container p {
+  margin-bottom: 8px;
+}
+
+.pdf-container h1 {
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+}
+
+.pdf-container h2 {
+  margin-top: 1.2rem;
+  color: #6a1b9a;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
+}
+
+/* -------------------- DARK THEME -------------------- */
+body.dark {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark .navbar {
+  background-color: #4a148c;
+}
+
+body.dark .theme-toggle {
+  border-color: #eee;
+  color: #eee;
+}
+
+body.dark form,
+body.dark .preview {
+  background-color: #1e1e1e;
+  color: #eee;
+}
+
+body.dark input,
+body.dark textarea {
+  background-color: #2a2a2a;
+  color: #eee;
+  border-color: #666;
+}
+
+body.dark .actions button {
+  background-color: #4a148c;
+}
+
+body.dark .actions button:hover {
+  background-color: #6a1b9a;
+}
