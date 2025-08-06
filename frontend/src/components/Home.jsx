@@ -14,17 +14,22 @@ export default function Home() {
 
     if (email && password) {
       try {
-        if (mode === 'login') {
-          if (email === 'user@example.com' && password === '123456') {
-            navigate('/form', { state: { userEmail: email } });
-          } else {
-            setError('Invalid login credentials');
-          }
-        } else {
-          console.log('Registered:', { email, password });
+        const res = await fetch(`http://localhost:5000/api/${mode}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          alert(`${mode === 'login' ? 'Login' : 'Registration'} successful!`);
           navigate('/form', { state: { userEmail: email } });
+        } else {
+          setError(data.msg || 'Something went wrong');
         }
       } catch (err) {
+        console.error('Error:', err);
         setError('Something went wrong. Try again.');
       }
     } else {
