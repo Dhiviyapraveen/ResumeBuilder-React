@@ -1,18 +1,17 @@
-// models/resume.js
 import mongoose from 'mongoose';
 
-const ResumeSchema = new mongoose.Schema({
-  email: { type: String, required: true, unique: true },
-  fullName: String,
+const resumeSchema = new mongoose.Schema({
+  name: String,
+  email: String,
   phone: String,
-  linkedin: String,
-  github: String,
-  education: String,
-  skills: String,
-  certifications: String,
-  projects: String,
-  internships: String,
-  achievements: String,
+  education: [{ degree: String, institution: String, year: String }],
+  skills: [String],
+  projects: [{ title: String, description: String }],
+  internships: [{ company: String, role: String }],
+  achievements: [String],
+  certifications: [String],
 });
 
-export default mongoose.model('Resume', ResumeSchema);
+const Resume = mongoose.model('Resume', resumeSchema);
+
+export default Resume;
